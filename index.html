@@ -1,0 +1,659 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Kế hoạch thử bán kẹp nơ trên website, viết cho học sinh lớp 8, có hình minh hoạ cho từng khái niệm kinh doanh.">
+<style>body{margin:0}</style>
+<title>Kế hoạch kẹp nơ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&display=swap">
+<style>
+:root{
+  --bg:#FBF7F9; --surface:#FFFFFF; --tint:#F6E9EF; --ink:#2A1B2E; --ink-2:#5C4A60; --muted:#8A7890;
+  --line:#EADCE3; --line-2:#DCC7D2; --accent:#B23A60; --accent-soft:#F7DDE6;
+  --ok:#2F7A55; --ok-bg:#E3F2E9; --warn:#946200; --warn-bg:#FBEFD6; --no:#B03030; --no-bg:#F9E1E1;
+  --blue:#4F5F86; --blue-bg:#E6EAF4;
+  --display:"Fraunces", Georgia, serif;
+  --body:"Be Vietnam Pro", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#1A1220; --surface:#231929; --tint:#2C1F33; --ink:#F3E8EF; --ink-2:#CDBBD2; --muted:#9C88A3;
+    --line:#3A2B41; --line-2:#4A3852; --accent:#EA8AAA; --accent-soft:#3F2130;
+    --ok:#7DCBA0; --ok-bg:#1F3329; --warn:#E8BE6A; --warn-bg:#3A2E17; --no:#F09595; --no-bg:#3D1F22;
+    --blue:#A9B6DA; --blue-bg:#252C40;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#1A1220; --surface:#231929; --tint:#2C1F33; --ink:#F3E8EF; --ink-2:#CDBBD2; --muted:#9C88A3;
+  --line:#3A2B41; --line-2:#4A3852; --accent:#EA8AAA; --accent-soft:#3F2130;
+  --ok:#7DCBA0; --ok-bg:#1F3329; --warn:#E8BE6A; --warn-bg:#3A2E17; --no:#F09595; --no-bg:#3D1F22;
+  --blue:#A9B6DA; --blue-bg:#252C40;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:20px}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.65;padding-inline:16px;padding-block:0 64px}
+.wrap{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:200px minmax(0,1fr);gap:48px}
+@media (max-width:920px){.wrap{grid-template-columns:minmax(0,1fr)} nav.toc{display:none}}
+nav.toc{position:sticky;top:env(safe-area-inset-top,0px);align-self:start;padding-block:40px 24px;max-height:100vh;overflow:auto}
+nav.toc .lbl{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+nav.toc ol{list-style:none;margin:0;padding:0;display:grid;gap:1px}
+nav.toc a{display:grid;grid-template-columns:24px 1fr;color:var(--ink-2);text-decoration:none;font-size:13.5px;padding:4px 8px;border-radius:6px}
+nav.toc a span{color:var(--muted);font-variant-numeric:tabular-nums}
+nav.toc a:hover,nav.toc a:focus-visible{background:var(--tint);color:var(--ink);outline:none}
+main{min-width:0;max-width:780px}
+header.top{padding-block:44px 32px;border-bottom:1px solid var(--line)}
+.eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:600}
+h1{font-family:var(--display);font-weight:500;font-size:clamp(34px,5.4vw,50px);line-height:1.1;margin:10px 0 14px;text-wrap:balance}
+h1 em{font-style:italic;color:var(--accent)}
+.lede{font-size:18px;color:var(--ink-2);max-width:58ch;margin:0 0 20px}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(128px,1fr));gap:10px}
+.fact{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.fact b{display:block;font-size:18px;font-variant-numeric:tabular-nums}
+.fact span{font-size:13px;color:var(--muted)}
+section{padding-block:40px 12px;border-bottom:1px solid var(--line)}
+section:last-of-type{border-bottom:0}
+h2{font-family:var(--display);font-weight:500;font-size:27px;line-height:1.25;margin:0 0 14px;text-wrap:balance}
+h2 .n{display:block;font-family:var(--body);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:4px}
+h3{font-size:16px;font-weight:600;margin:24px 0 8px}
+p{margin:0 0 14px;max-width:62ch}
+ul,ol{margin:0 0 14px;padding-left:22px;max-width:62ch}
+li{margin-bottom:6px}
+strong{font-weight:600}
+a{color:var(--accent)}
+.cap{font-size:13.5px;color:var(--muted)}
+
+.term{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;align-items:baseline;background:var(--blue-bg);border-radius:10px;padding:12px 16px;margin:0 0 18px;max-width:62ch}
+.term .k{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);grid-row:span 2}
+.term b{color:var(--ink)}
+.term span{color:var(--ink-2);font-size:15px}
+
+.fig{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px;margin:0 0 18px}
+.fig .ft{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+.fig svg{display:block;width:100%;height:auto;max-width:100%}
+.fig svg.cycle{max-width:440px;margin:0 auto}
+.fig .why{margin:14px 0 0;padding-top:12px;border-top:1px dashed var(--line-2);font-size:15px}
+.fig .why::before{content:"Vì sao? ";font-weight:700;color:var(--accent)}
+svg .t{fill:var(--ink);font-family:var(--body);font-size:13px}
+svg .tm{fill:var(--muted);font-family:var(--body);font-size:12px}
+svg .tb{fill:var(--ink);font-family:var(--body);font-size:13px;font-weight:700}
+
+.flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:6px}
+.flow .st{flex:1 1 80px;background:var(--tint);border-radius:10px;padding:10px 12px;font-size:14px;display:grid;gap:2px}
+.flow .st b{font-size:11px;letter-spacing:.08em;color:var(--accent)}
+.flow .ar{align-self:center;color:var(--muted);font-weight:700}
+@media (max-width:640px){.flow{flex-direction:column}.flow .ar{transform:rotate(90deg);align-self:center}}
+
+.bars{display:grid;gap:8px}
+.bars .r{display:grid;grid-template-columns:120px minmax(0,1fr) 70px;gap:10px;align-items:center;font-size:14px}
+.bars .tr{height:16px;background:var(--tint);border-radius:5px;overflow:hidden}
+.bars .fl{height:100%;background:var(--line-2);border-radius:5px}
+.bars .r.me .fl{background:var(--accent)}
+.bars .r.me{font-weight:600}
+.bars .v{text-align:right;font-variant-numeric:tabular-nums}
+@media (max-width:480px){.bars .r{grid-template-columns:1fr 64px}.bars .tr{grid-column:1 / -1;order:3}}
+
+.stack{display:flex;height:34px;border-radius:7px;overflow:hidden;background:var(--tint)}
+.stack i{display:block;height:100%}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:13.5px;margin-top:10px}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend span::before{content:"";width:11px;height:11px;border-radius:3px;background:var(--c)}
+.c-ship{--c:var(--muted);background:var(--muted)}
+.c-cost{--c:var(--warn);background:var(--warn)}
+.c-box{--c:var(--blue);background:var(--blue)}
+.c-left{--c:var(--accent);background:var(--accent)}
+.c-a{--c:var(--accent);background:var(--accent)}
+.c-b{--c:var(--blue);background:var(--blue)}
+.c-c{--c:var(--muted);background:var(--muted)}
+.c-d{--c:var(--warn);background:var(--warn)}
+.c-e{--c:var(--ok);background:var(--ok)}
+.srow{display:grid;gap:6px;margin-bottom:14px}
+.srow .lab{display:flex;justify-content:space-between;gap:12px;font-size:14px}
+.srow .lab b{font-variant-numeric:tabular-nums}
+
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.card h4{margin:0 0 8px;font-size:15px}
+.card ul{margin:0;padding-left:18px;font-size:14.5px}
+.card.pick{border-color:var(--accent);background:var(--accent-soft)}
+.card .tag{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.plus{color:var(--ok)} .minus{color:var(--no)}
+
+.eq{display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-variant-numeric:tabular-nums;font-size:15px;margin-bottom:10px}
+.eq .p{background:var(--tint);border-radius:8px;padding:6px 10px}
+.eq .res{border-radius:8px;padding:6px 12px;font-weight:700}
+.eq .res.good{background:var(--ok-bg);color:var(--ok)}
+.eq .res.bad{background:var(--no-bg);color:var(--no)}
+
+.funnel{display:grid;gap:6px;justify-items:center}
+.funnel div{background:var(--accent-soft);border-radius:8px;padding:8px 12px;text-align:center;font-size:14.5px}
+.funnel div b{font-variant-numeric:tabular-nums}
+
+.shots{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px}
+.shot{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 12px 12px;display:grid;gap:2px}
+.shot svg{width:100%;height:72px;color:var(--accent);margin-bottom:4px}
+.shot .num{font-size:11px;font-weight:700;letter-spacing:.08em;color:var(--accent)}
+.shot b{font-size:14.5px}
+.shot span{font-size:13px;color:var(--ink-2)}
+.shot.must{border:1.5px solid var(--accent)}
+
+.tbl{overflow-x:auto;margin:0 0 18px;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:14.5px;font-variant-numeric:tabular-nums}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600;background:var(--tint)}
+tr:last-child td{border-bottom:0}
+td.num,th.num{text-align:right;white-space:nowrap}
+tr.total td{font-weight:700;background:var(--tint)}
+
+.chain{display:grid;gap:8px}
+.chain .row{display:flex;flex-wrap:wrap;align-items:center;gap:6px;font-size:14px}
+.chain .row .lbl{width:100%;font-weight:700;font-size:14px}
+.chain .c{background:var(--tint);border-radius:8px;padding:5px 10px}
+.chain .c.bad{background:var(--no-bg);color:var(--no)}
+.chain .c.good{background:var(--ok-bg);color:var(--ok)}
+.chain .a{color:var(--muted)}
+
+.guess{display:grid;gap:10px}
+.guess .g{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 12px;background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--warn);border-radius:10px;padding:12px 14px}
+.guess .g b{font-size:15px}
+.guess .g .pill{font-size:12px;font-weight:700;color:var(--warn);background:var(--warn-bg);border-radius:999px;padding:2px 10px;align-self:start;white-space:nowrap}
+.guess .g span{grid-column:1 / -1;font-size:14px;color:var(--ink-2)}
+
+.decide{display:grid;gap:10px}
+.decide .q{background:var(--tint);border-radius:12px;padding:14px 16px}
+.decide .q ol{margin:6px 0 0;font-size:15px}
+.decide .out{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}
+.decide .o{border-radius:12px;padding:14px 16px;font-size:15px}
+.decide .o b{display:block;margin-bottom:4px}
+.decide .o.yes{background:var(--ok-bg)} .decide .o.yes b{color:var(--ok)}
+.decide .o.no{background:var(--no-bg)} .decide .o.no b{color:var(--no)}
+.stop{margin-top:12px;border:1.5px dashed var(--no);border-radius:12px;padding:12px 16px;font-size:15px}
+
+.risks{display:grid;gap:10px}
+.risk{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:14px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 16px;font-size:15px}
+.risk .if{font-weight:600}
+.risk .if::before{content:"Nếu ";color:var(--no)}
+.risk .then::before{content:"Thì ";font-weight:700;color:var(--ok)}
+@media (max-width:560px){.risk{grid-template-columns:1fr;gap:4px}}
+
+.budget{display:grid;gap:8px}
+.budget .b{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,2fr) 92px;gap:12px;align-items:center;font-size:14.5px}
+.budget .track{height:14px;background:var(--tint);border-radius:6px;overflow:hidden}
+.budget .fill{height:100%;background:var(--accent);border-radius:6px}
+.budget .fill.keep{background:var(--muted)}
+.budget .v{text-align:right;font-variant-numeric:tabular-nums;font-weight:600}
+@media (max-width:520px){.budget .b{grid-template-columns:1fr 84px}.budget .track{grid-column:1 / -1;order:3}}
+
+ol.tasks{list-style:none;padding:0;margin:0 0 18px;display:grid;gap:8px;max-width:none}
+ol.tasks li{margin:0;display:grid;grid-template-columns:26px 22px 1fr;gap:10px;align-items:start;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+ol.tasks .idx{font-weight:700;color:var(--accent);font-variant-numeric:tabular-nums}
+ol.tasks input{width:18px;height:18px;margin:4px 0 0;accent-color:var(--accent)}
+ol.tasks li.checked .txt{color:var(--muted);text-decoration:line-through}
+ol.tasks label{cursor:pointer}
+.phone{font-variant-numeric:tabular-nums;font-weight:700;user-select:all}
+input:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+footer{font-size:13px;color:var(--muted);padding-top:24px}
+</style>
+</head>
+<body>
+
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="bow" viewBox="0 0 100 80" preserveAspectRatio="none">
+    <ellipse cx="30" cy="36" rx="22" ry="15" transform="rotate(-18 30 36)" fill="currentColor"/>
+    <ellipse cx="70" cy="36" rx="22" ry="15" transform="rotate(18 70 36)" fill="currentColor"/>
+    <path d="M46 44 L33 75 L43 72 L50 50 Z" fill="currentColor"/>
+    <path d="M54 44 L67 75 L57 72 L50 50 Z" fill="currentColor"/>
+    <rect x="42" y="27" width="16" height="20" rx="6" fill="currentColor" stroke="var(--surface)" stroke-width="2.5"/>
+  </symbol>
+  <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0 0 L10 5 L0 10 Z" style="fill:var(--accent)"/>
+  </marker>
+</svg>
+
+<div class="wrap">
+<nav class="toc" aria-label="Mục lục">
+  <div class="lbl">Mục lục</div>
+  <ol>
+    <li><a href="#p1"><span>1</span>Hàng đi đường nào</a></li>
+    <li><a href="#p2"><span>2</span>Vì sao kẹp nơ</a></li>
+    <li><a href="#p3"><span>3</span>Vì sao website</a></li>
+    <li><a href="#p4"><span>4</span>Giá vốn</a></li>
+    <li><a href="#p5"><span>5</span>Vì sao bán theo set</a></li>
+    <li><a href="#p6"><span>6</span>Quảng cáo</a></li>
+    <li><a href="#p7"><span>7</span>SEO</a></li>
+    <li><a href="#p8"><span>8</span>Ảnh sản phẩm</a></li>
+    <li><a href="#p9"><span>9</span>Web tự trả lời</a></li>
+    <li><a href="#p10"><span>10</span>Trả tiền trước</a></li>
+    <li><a href="#p11"><span>11</span>Nhập theo lô</a></li>
+    <li><a href="#p12"><span>12</span>Chia 10 triệu</a></li>
+    <li><a href="#p13"><span>13</span>Số đang đoán</a></li>
+    <li><a href="#p14"><span>14</span>Thử thành công?</a></li>
+    <li><a href="#p15"><span>15</span>Nếu có chuyện</a></li>
+    <li><a href="#p16"><span>16</span>Bắt đầu</a></li>
+  </ol>
+</nav>
+
+<main>
+<header class="top">
+  <div class="eyebrow">Kế hoạch thử bán hàng</div>
+  <h1>Mình thử bán <em>kẹp nơ</em> trên website</h1>
+  <p class="lede">Mua kẹp nơ từ Trung Quốc, chụp ảnh thật đẹp, bán trên website của mình cho các bạn gái khắp Việt Nam. Đây là một lần <strong>thử</strong>: làm nhỏ, xem kết quả, rồi mới quyết định làm tiếp hay dừng.</p>
+  <div class="facts">
+    <div class="fact"><b>10 triệu</b><span>tiền để thử</span></div>
+    <div class="fact"><b>Website</b><span>nơi bán duy nhất</span></div>
+    <div class="fact"><b>Google + Facebook</b><span>nơi tìm khách</span></div>
+    <div class="fact"><b>Chỉ ảnh sản phẩm</b><span>không người mẫu</span></div>
+    <div class="fact"><b>Không nhắn tin</b><span>web tự trả lời khách</span></div>
+  </div>
+</header>
+
+<section id="p1">
+  <h2><span class="n">Phần 1</span>Một cái kẹp đi đường nào để tới tay khách?</h2>
+  <div class="fig">
+    <div class="ft">Đường đi của một cái kẹp</div>
+    <div class="flow">
+      <div class="st"><b>1</b>Xưởng ở Trung Quốc, bán trên trang 1688</div>
+      <div class="ar" aria-hidden="true">→</div>
+      <div class="st"><b>2</b>Đơn vị đặt hộ mua và chở về Việt Nam</div>
+      <div class="ar" aria-hidden="true">→</div>
+      <div class="st"><b>3</b>Về nhà mình ở Đà Nẵng: kiểm hàng, chụp ảnh</div>
+      <div class="ar" aria-hidden="true">→</div>
+      <div class="st"><b>4</b>Đăng lên website của mình</div>
+      <div class="ar" aria-hidden="true">→</div>
+      <div class="st"><b>5</b>Khách thấy, chuyển tiền trước</div>
+      <div class="ar" aria-hidden="true">→</div>
+      <div class="st"><b>6</b>Shipper giao tới nhà khách</div>
+    </div>
+    <p class="why">Mỗi bước đều tốn tiền hoặc thời gian. Hiểu đường đi thì mới biết tiền mất ở đâu và chỗ nào có thể hỏng.</p>
+  </div>
+  <p>Mình không tự làm kẹp. Việc của mình là <strong>chọn đúng mẫu đẹp</strong>, <strong>chụp ảnh thật hay</strong>, và <strong>giao hàng đúng hẹn</strong>.</p>
+</section>
+
+<section id="p2">
+  <h2><span class="n">Phần 2</span>Vì sao chọn kẹp nơ?</h2>
+  <div class="term"><span class="k">Từ khoá</span><b>Đối thủ</b><span>Những shop khác đang bán cùng loại hàng. Càng nhiều đối thủ, càng khó được khách chọn.</span></div>
+  <div class="fig">
+    <div class="ft">Số shop đang bán (càng ít càng dễ)</div>
+    <div class="bars">
+      <div class="r"><span>Kẹp tóc vuông</span><div class="tr"><div class="fl" style="width:97.8%"></div></div><span class="v">891</span></div>
+      <div class="r me"><span>Kẹp nơ</span><div class="tr"><div class="fl" style="width:42.7%"></div></div><span class="v">389</span></div>
+      <div class="r"><span>Cài tóc cao cấp</span><div class="tr"><div class="fl" style="width:100%"></div></div><span class="v">911</span></div>
+    </div>
+    <div class="ft" style="margin-top:20px">Giá trung bình một cái (càng cao càng dễ có lãi)</div>
+    <div class="bars">
+      <div class="r"><span>Kẹp tóc vuông</span><div class="tr"><div class="fl" style="width:35.1%"></div></div><span class="v">9.700đ</span></div>
+      <div class="r me"><span>Kẹp nơ</span><div class="tr"><div class="fl" style="width:88%"></div></div><span class="v">24.300đ</span></div>
+      <div class="r"><span>Cài tóc cao cấp</span><div class="tr"><div class="fl" style="width:100%"></div></div><span class="v">27.600đ</span></div>
+    </div>
+    <p class="cap" style="margin:10px 0 0">Số liệu bán hàng năm 2025 trên các sàn, theo metric.vn.</p>
+    <p class="why">Kẹp nơ có ít đối thủ hơn một nửa, mà giá bán gần bằng loại đắt nhất. Chỗ ít người bán mà giá tốt là chỗ người mới dễ chen vào nhất.</p>
+  </div>
+  <p>Thêm hai lý do: kẹp nơ đang là mốt, báo thời trang năm 2026 viết về nó nhiều. Và nơ voan, satin, nhung <strong>chụp riêng vẫn rất đẹp</strong>, không cần người đeo.</p>
+</section>
+
+<section id="p3">
+  <h2><span class="n">Phần 3</span>Vì sao chỉ bán trên website?</h2>
+  <div class="term"><span class="k">Từ khoá</span><b>Sàn thương mại điện tử</b><span>Những "khu chợ" lớn trên mạng như Shopee, nơi hàng nghìn shop bán cạnh nhau.</span></div>
+  <div class="fig">
+    <div class="ft">Bán ở chợ lớn hay mở cửa hàng riêng?</div>
+    <div class="two">
+      <div class="card">
+        <h4>Chợ lớn (sàn)</h4>
+        <ul>
+          <li class="plus">Có sẵn rất nhiều người đi chợ</li>
+          <li class="minus">Chợ lấy khoảng 20 trên mỗi 100 đồng bán được</li>
+          <li class="minus">Mình chỉ là một sạp giữa hàng trăm sạp giống nhau</li>
+          <li class="minus">Khách hay nhắn tin hỏi, phải có người trả lời</li>
+        </ul>
+      </div>
+      <div class="card pick">
+        <div class="tag">Mình chọn</div>
+        <h4>Cửa hàng riêng (website)</h4>
+        <ul>
+          <li class="plus">Tiền bán được là của mình, không mất phí chợ</li>
+          <li class="plus">Trang trí theo ý mình, khách nhớ tên mình</li>
+          <li class="plus">Web tự trả lời, không cần người trực</li>
+          <li class="minus">Không ai tự đi ngang qua: phải tự mời khách tới</li>
+        </ul>
+      </div>
+    </div>
+    <p class="why">Mình không có người ngồi trả lời tin nhắn cả ngày, nên cần một nơi tự chạy được. Cái giá phải trả là tự đi tìm khách, và đó là việc của Phần 6 và Phần 7.</p>
+  </div>
+</section>
+
+<section id="p4">
+  <h2><span class="n">Phần 4</span>Một cái kẹp thật ra tốn bao nhiêu?</h2>
+  <div class="term"><span class="k">Từ khoá</span><b>Giá vốn</b><span>Tất cả số tiền bỏ ra để một cái kẹp nằm trong tay mình, không chỉ là giá mua.</span></div>
+  <div class="fig">
+    <div class="ft">Giá vốn một cái kẹp ≈ 8.000đ (ví dụ, số thật chưa biết)</div>
+    <div class="stack" role="img" aria-label="Giá vốn 8.000 đồng gồm tiền hàng 6.600, phí đặt hộ 200, cước chở về 600, thuế và phí khác 400, bù hàng lỗi 200">
+      <i class="c-a" style="width:82.5%"></i><i class="c-b" style="width:2.5%"></i><i class="c-c" style="width:7.5%"></i><i class="c-d" style="width:5%"></i><i class="c-e" style="width:2.5%"></i>
+    </div>
+    <div class="legend">
+      <span class="c-a" style="background:none">Tiền mua ở Trung Quốc · 6.600đ</span>
+      <span class="c-b" style="background:none">Phí đặt hộ · 200đ</span>
+      <span class="c-c" style="background:none">Cước chở về · 600đ</span>
+      <span class="c-d" style="background:none">Thuế, phí khác · 400đ</span>
+      <span class="c-e" style="background:none">Bù hàng lỗi · 200đ</span>
+    </div>
+    <p class="why">Nếu chỉ nhìn giá mua 6.600đ, mình sẽ tưởng lãi nhiều hơn thật. Phải cộng đủ mọi khoản mới biết bán giá bao nhiêu thì còn lời.</p>
+  </div>
+  <p>Có một khoản rất khó đoán: nơ to và bồng thì <strong>chiếm chỗ</strong> dù rất nhẹ. Bên chở hàng có thể tính tiền theo độ to chứ không theo cân nặng, làm cước tăng 3 đến 5 lần. Vì vậy việc đầu tiên là gọi hỏi họ tính thế nào.</p>
+</section>
+
+<section id="p5">
+  <h2><span class="n">Phần 5</span>Vì sao không bán lẻ từng cái?</h2>
+  <div class="term"><span class="k">Từ khoá</span><b>Ship nằm trong giá</b><span>Khách không bao giờ thấy dòng "phí giao hàng". Mình tự trả tiền ship, khoảng 25.000đ một đơn, lấy từ giá bán.</span></div>
+  <div class="fig">
+    <div class="ft">Cùng một khoản ship 25.000đ, trong đơn nhỏ và đơn lớn</div>
+    <div class="srow">
+      <div class="lab"><span>Bán lẻ 1 cái · 39.000đ</span><b>Còn lại 4.000đ</b></div>
+      <div class="stack" style="width:26.2%;min-width:60px"><i class="c-ship" style="width:64.1%"></i><i class="c-cost" style="width:20.5%"></i><i class="c-box" style="width:5.1%"></i><i class="c-left" style="width:10.3%"></i></div>
+    </div>
+    <div class="srow">
+      <div class="lab"><span>Set 3 cái · 149.000đ</span><b>Còn lại 94.000đ</b></div>
+      <div class="stack"><i class="c-ship" style="width:16.8%"></i><i class="c-cost" style="width:16.1%"></i><i class="c-box" style="width:4%"></i><i class="c-left" style="width:63.1%"></i></div>
+    </div>
+    <div class="legend">
+      <span class="c-ship" style="background:none">Ship</span>
+      <span class="c-cost" style="background:none">Giá vốn kẹp</span>
+      <span class="c-box" style="background:none">Hộp, túi, thiệp</span>
+      <span class="c-left" style="background:none">Còn lại cho mình</span>
+    </div>
+    <p class="why">Tiền ship gần như bằng nhau dù gửi 1 cái hay 3 cái. Trong đơn 39.000đ, ship ăn gần hết. Trong đơn 149.000đ, ship chỉ là một phần nhỏ. Nên mình chỉ bán theo set.</p>
+  </div>
+  <h3>Bảng giá</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>Sản phẩm</th><th class="num">Giá</th><th class="num">Còn lại*</th></tr></thead>
+    <tbody>
+      <tr><td>Set 2 cái (để khách mua thử)</td><td class="num">99.000đ</td><td class="num">53.000đ</td></tr>
+      <tr><td>Set 3 cái có hộp</td><td class="num">149.000đ</td><td class="num">94.000đ</td></tr>
+      <tr><td>Set đặc biệt, chỉ làm 50 hoặc 150 bộ</td><td class="num">179.000đ</td><td class="num">—</td></tr>
+      <tr><td>Set 5 cái, hộp và thẻ ảnh</td><td class="num">229.000đ</td><td class="num">156.000đ</td></tr>
+    </tbody>
+  </table></div>
+  <p class="cap">*Còn lại = giá bán − ship − giá vốn − hộp. Đây <strong>chưa phải lãi</strong>, vì chưa trừ tiền quảng cáo (Phần 6).</p>
+  <div class="term"><span class="k">Từ khoá</span><b>Hàng giới hạn</b><span>Chỉ làm một số lượng nhỏ, bán hết là thôi. Khách biết sắp hết nên quyết định mua nhanh hơn.</span></div>
+</section>
+
+<section id="p6">
+  <h2><span class="n">Phần 6</span>Quảng cáo: trả tiền để mời khách</h2>
+  <div class="term"><span class="k">Từ khoá</span><b>Tiền quảng cáo cho mỗi đơn</b><span>Tổng tiền trả cho Facebook, chia cho số đơn bán được nhờ quảng cáo đó.</span></div>
+  <div class="fig">
+    <div class="ft">Ví dụ: trả Facebook 100.000đ (hình minh hoạ, không theo tỉ lệ)</div>
+    <div class="funnel">
+      <div style="width:100%"><b>2.000</b> người thấy quảng cáo</div>
+      <div style="width:70%"><b>40</b> người bấm vào web</div>
+      <div style="width:42%"><b>2</b> người mua</div>
+    </div>
+    <p style="text-align:center;margin:12px auto 0;font-weight:600">100.000đ ÷ 2 đơn = <span style="color:var(--accent)">50.000đ cho mỗi đơn</span></p>
+  </div>
+  <div class="fig">
+    <div class="ft">Lãi thật của một set 3 cái</div>
+    <div class="eq"><span class="p">Còn lại 94.000đ</span><span>−</span><span class="p">Quảng cáo 50.000đ</span><span>=</span><span class="res good">Lãi 44.000đ</span></div>
+    <div class="eq"><span class="p">Còn lại 94.000đ</span><span>−</span><span class="p">Quảng cáo 100.000đ</span><span>=</span><span class="res bad">Lỗ 6.000đ</span></div>
+    <p class="why">Web không có khách tự đi ngang qua, nên gần như mọi đơn lúc đầu đều phải "mua" bằng quảng cáo. Nếu tiền quảng cáo cho một đơn lớn hơn phần còn lại, bán càng nhiều càng lỗ. Đây là con số quan trọng nhất của cả lần thử.</p>
+  </div>
+  <h3>Làm Facebook thế nào</h3>
+  <ul>
+    <li>Trang Facebook chỉ đăng ảnh sản phẩm. <strong>Tắt nhận tin nhắn</strong>, hoặc tự động trả lời kèm link web.</li>
+    <li>Chạy thử 3 tuần, mỗi ngày 50.000–70.000đ, thử 3–4 ảnh bìa khác nhau. Ảnh nào ra nhiều đơn thì giữ, còn lại tắt.</li>
+    <li>Đẩy set 3 và set 5 nhiều hơn set 2, vì chúng chịu được tiền quảng cáo cao hơn.</li>
+  </ul>
+</section>
+
+<section id="p7">
+  <h2><span class="n">Phần 7</span>SEO: để Google tự đưa khách tới</h2>
+  <div class="term"><span class="k">Từ khoá</span><b>SEO</b><span>Làm cho website hiện lên đầu khi ai đó gõ "kẹp nơ" trên Google. Không phải trả tiền cho mỗi người tới.</span></div>
+  <div class="fig">
+    <div class="ft">Quảng cáo giống mở vòi nước, SEO giống trồng cây</div>
+    <svg viewBox="0 0 600 250" role="img" aria-label="Biểu đồ: khách từ quảng cáo đều đặn khi còn trả tiền rồi về không khi ngừng; khách từ SEO bắt đầu gần bằng không rồi tăng dần qua 6 tháng">
+      <line x1="50" y1="200" x2="575" y2="200" style="stroke:var(--line-2)" stroke-width="1.5"/>
+      <text class="tm" x="50" y="22">Khách tới web</text>
+      <text class="tm" x="95" y="222" text-anchor="middle">Tháng 1</text>
+      <text class="tm" x="185" y="222" text-anchor="middle">Tháng 2</text>
+      <text class="tm" x="275" y="222" text-anchor="middle">Tháng 3</text>
+      <text class="tm" x="365" y="222" text-anchor="middle">Tháng 4</text>
+      <text class="tm" x="455" y="222" text-anchor="middle">Tháng 5</text>
+      <text class="tm" x="545" y="222" text-anchor="middle">Tháng 6</text>
+      <path d="M50 110 L400 110 L418 198 L575 198" fill="none" style="stroke:var(--accent)" stroke-width="3" stroke-linejoin="round"/>
+      <line x1="409" y1="60" x2="409" y2="200" style="stroke:var(--muted)" stroke-dasharray="4 4"/>
+      <text class="tm" x="415" y="72">ngừng trả tiền</text>
+      <text class="tb" x="60" y="100" style="fill:var(--accent)">Quảng cáo</text>
+      <path d="M50 198 C 260 196, 400 150, 575 48" fill="none" style="stroke:var(--ok)" stroke-width="3"/>
+      <text class="tb" x="570" y="40" text-anchor="end" style="fill:var(--ok)">SEO</text>
+      <text class="tm" x="60" y="190">gần như chưa có gì</text>
+    </svg>
+    <p class="why">Quảng cáo có khách ngay nhưng tắt tiền là hết. SEO mất 3–6 tháng mới có khách, nhưng sau đó khách tự tới miễn phí. Nên mình làm cả hai: quảng cáo để thử ngay, SEO để dành cho sau này.</p>
+  </div>
+  <h3>Làm SEO thế nào</h3>
+  <ul>
+    <li>Mỗi mẫu có một trang riêng: tên rõ, số đo, chất liệu, cách giữ gìn.</li>
+    <li>Gom mẫu thành trang theo loại: nơ voan, nơ satin, nơ nhung, nơ đính đá, nơ dáng dài.</li>
+    <li>Đặt tên ảnh có chữ, ví dụ <code>kep-no-voan-hong.webp</code>, để Google hiểu ảnh là gì.</li>
+    <li>Đưa sản phẩm lên mục Mua sắm của Google, miễn phí.</li>
+    <li>Mỗi tháng viết 2 bài ngắn, ví dụ "Chọn cỡ nơ theo độ dày tóc".</li>
+  </ul>
+</section>
+
+<section id="p8">
+  <h2><span class="n">Phần 8</span>Ảnh sản phẩm là người bán hàng của mình</h2>
+  <div class="term"><span class="k">Từ khoá</span><b>Thương hiệu</b><span>Thứ khiến khách nhìn là nhận ra mình. Ở đây là bộ ảnh: cùng nền, cùng màu, cùng kiểu chụp.</span></div>
+  <p>Khách không cầm được cái kẹp, không hỏi được ai, không thấy ai đeo. <strong>Họ chỉ có ảnh.</strong> Nên mỗi mẫu cần đủ 8 ảnh, mỗi ảnh trả lời một câu khách định hỏi.</p>
+  <div class="shots">
+    <div class="shot must">
+      <svg viewBox="0 0 120 80" aria-hidden="true"><use href="#bow" x="10" y="0" width="100" height="80"/></svg>
+      <span class="num">1 · ẢNH BÌA</span><b>Chụp thẳng, nền trơn</b><span>"Trông nó thế nào?"</span>
+    </div>
+    <div class="shot">
+      <svg viewBox="0 0 120 80" aria-hidden="true"><use href="#bow" x="25" y="4" width="70" height="76"/></svg>
+      <span class="num">2</span><b>Chụp nghiêng</b><span>"Nơ có bồng không?"</span>
+    </div>
+    <div class="shot">
+      <svg viewBox="0 0 120 80" aria-hidden="true"><use href="#bow" x="46" y="0" width="28" height="80"/></svg>
+      <span class="num">3</span><b>Chụp cạnh bên</b><span>"Nơ dày, đuôi dài không?"</span>
+    </div>
+    <div class="shot">
+      <svg viewBox="0 0 120 80" aria-hidden="true"><use href="#bow" x="10" y="0" width="100" height="80" opacity=".25"/><rect x="18" y="33" width="84" height="8" rx="4" style="fill:var(--ink-2)"/><circle cx="92" cy="37" r="7" fill="none" style="stroke:var(--ink-2)" stroke-width="3"/></svg>
+      <span class="num">4</span><b>Mặt sau, phần kẹp</b><span>"Có chắc không?"</span>
+    </div>
+    <div class="shot">
+      <svg viewBox="0 0 120 80" aria-hidden="true"><use href="#bow" x="10" y="0" width="100" height="80" opacity=".25"/><circle cx="62" cy="34" r="24" style="fill:var(--surface);stroke:var(--ink-2)" stroke-width="3"/><path d="M46 26 L78 26 M44 34 L80 34 M46 42 L78 42" style="stroke:var(--accent)" stroke-width="3" stroke-linecap="round"/><path d="M79 51 L94 68" style="stroke:var(--ink-2)" stroke-width="5" stroke-linecap="round"/></svg>
+      <span class="num">5</span><b>Chụp thật gần chất liệu</b><span>"Vải gì, có mịn không?"</span>
+    </div>
+    <div class="shot must">
+      <svg viewBox="0 0 120 80" aria-hidden="true"><use href="#bow" x="30" y="0" width="60" height="48"/><rect x="8" y="56" width="104" height="18" rx="2" fill="none" style="stroke:var(--ink-2)" stroke-width="2"/><path d="M18 56v7M28 56v5M38 56v7M48 56v5M58 56v7M68 56v5M78 56v7M88 56v5M98 56v7M108 56v5" style="stroke:var(--ink-2)" stroke-width="1.5"/></svg>
+      <span class="num">6 · KHÔNG ĐƯỢC BỎ</span><b>Đặt trên thước, ghi số đo</b><span>"To hay nhỏ?"</span>
+    </div>
+    <div class="shot">
+      <svg viewBox="0 0 120 80" aria-hidden="true"><use href="#bow" x="2" y="22" width="38" height="32" style="color:var(--accent)"/><use href="#bow" x="41" y="22" width="38" height="32" style="color:var(--warn)"/><use href="#bow" x="80" y="22" width="38" height="32" style="color:var(--blue)"/></svg>
+      <span class="num">7</span><b>Mọi màu xếp một hàng</b><span>"Có màu nào?"</span>
+    </div>
+    <div class="shot">
+      <svg viewBox="0 0 120 80" aria-hidden="true"><rect x="12" y="14" width="96" height="60" rx="4" fill="none" style="stroke:var(--ink-2)" stroke-width="2.5"/><use href="#bow" x="20" y="30" width="26" height="22"/><use href="#bow" x="47" y="30" width="26" height="22"/><use href="#bow" x="74" y="30" width="26" height="22"/></svg>
+      <span class="num">8</span><b>Cả set trong hộp</b><span>"Mở hộp thấy gì?"</span>
+    </div>
+  </div>
+  <div class="fig" style="margin-top:18px">
+    <div class="ft">Ba luật chụp</div>
+    <ol style="margin:0">
+      <li><strong>Đúng màu.</strong> Khách không hỏi được "màu thật có giống ảnh không". Màu sai là lý do đổi hàng nhiều nhất.</li>
+      <li><strong>Luôn cùng một kiểu:</strong> cùng nền, cùng ánh sáng, cùng góc. Nhìn cả trang là nhận ra mình.</li>
+      <li><strong>Ảnh số 6 bắt buộc.</strong> Không có ai đeo thử, nên thước đo là cách duy nhất cho khách biết cỡ.</li>
+    </ol>
+    <p class="why">Chụp đẹp khiến cái kẹp 8.000đ trông xứng đáng với giá bán. Ảnh làm việc của người bán hàng, không cần ai đứng tư vấn.</p>
+  </div>
+  <p class="cap">Đồ chụp khoảng 1.200.000đ: phông nền 2–3 màu, 2 đèn, chân máy, bàn xoay, thước, thẻ xám để chỉnh màu.</p>
+</section>
+
+<section id="p9">
+  <h2><span class="n">Phần 9</span>Website tự trả lời thay người</h2>
+  <div class="term"><span class="k">Từ khoá</span><b>Tự động</b><span>Máy tự làm một việc mỗi khi có chuyện xảy ra, không cần ai bấm.</span></div>
+  <div class="fig">
+    <div class="ft">Khách định hỏi gì → web trả lời bằng gì</div>
+    <div class="tbl" style="margin:0"><table>
+      <tbody>
+        <tr><td>"To hay nhỏ? Màu thật ra sao?"</td><td>→ Ảnh có thước đo, ảnh đúng màu, số đo ghi rõ</td></tr>
+        <tr><td>"Bao lâu thì nhận?"</td><td>→ Ngày giao dự kiến hiện ngay khi đặt</td></tr>
+        <tr><td>"Shop nhận tiền chưa?"</td><td>→ Tiền vào là email xác nhận tự gửi</td></tr>
+        <tr><td>"Hàng đang ở đâu?"</td><td>→ Email có mã vận đơn, trang tra đơn</td></tr>
+        <tr><td>"Hàng lỗi thì sao?"</td><td>→ Đổi trong 30 ngày, điền form, gửi ảnh lỗi</td></tr>
+        <tr><td>"Mẹ mua hộ được không?"</td><td>→ Gửi link đơn cho mẹ chuyển tiền</td></tr>
+      </tbody>
+    </table></div>
+    <p class="why">Mình không có người trực tin nhắn. Mỗi câu hỏi mà web đã trả lời sẵn là một câu không ai phải trả lời bằng tay. Câu nào khách hỏi qua form hai lần thì thêm câu trả lời lên web.</p>
+  </div>
+  <p>Cách duy nhất để liên hệ: <strong>một form trên web</strong>, mình đọc hai lần mỗi tuần.</p>
+</section>
+
+<section id="p10">
+  <h2><span class="n">Phần 10</span>Vì sao khách phải trả tiền trước?</h2>
+  <div class="term"><span class="k">Từ khoá</span><b>COD</b><span>Giao hàng rồi mới thu tiền. Khách có thể không nhận hàng.</span></div>
+  <div class="fig">
+    <div class="ft">Hai cách thu tiền</div>
+    <div class="chain">
+      <div class="row"><span class="lbl">Giao rồi mới thu tiền (COD)</span><span class="c">Gửi hàng</span><span class="a">→</span><span class="c bad">Khách không nhận</span><span class="a">→</span><span class="c bad">Hàng quay về</span><span class="a">→</span><span class="c bad">Mất 2 lần tiền ship</span></div>
+      <p class="cap" style="margin:0 0 10px">Khoảng 15–20 trên 100 đơn bị trả lại như vậy.</p>
+      <div class="row"><span class="lbl">Trả tiền trước</span><span class="c">Khách chuyển tiền</span><span class="a">→</span><span class="c good">Web tự thấy tiền</span><span class="a">→</span><span class="c good">Mới gửi hàng</span></div>
+      <p class="cap" style="margin:0">Chỉ khoảng 9 trên 100 đơn bị trả lại.</p>
+    </div>
+    <p class="why">Với ít vốn, mỗi lần mất tiền ship hai chiều là đau. Trả trước cũng giúp web tự xác nhận đơn, không ai phải gọi điện hỏi khách.</p>
+  </div>
+  <p>Nhiều bạn 14–16 tuổi chưa có tài khoản ngân hàng, nên web có nút gửi link cho bố mẹ trả hộ.</p>
+</section>
+
+<section id="p11">
+  <h2><span class="n">Phần 11</span>Nhập hàng từng lô nhỏ</h2>
+  <div class="term"><span class="k">Từ khoá</span><b>Lô hàng · Tồn kho</b><span>Lô hàng là một lần mua. Tồn kho là hàng đã mua mà chưa bán được.</span></div>
+  <div class="fig">
+    <div class="ft">Vòng quay của tiền</div>
+    <svg class="cycle" viewBox="0 0 420 300" role="img" aria-label="Vòng tròn 4 bước: có tiền, mua một lô hàng, chụp ảnh và bán hết, tiền về nhiều hơn, rồi quay lại">
+      <circle cx="210" cy="150" r="100" fill="none" style="stroke:var(--line-2)" stroke-width="1.5" stroke-dasharray="3 5"/>
+      <path d="M286.6 85.7 A100 100 0 0 1 306.6 124.1" fill="none" style="stroke:var(--accent)" stroke-width="2.5" marker-end="url(#arr)"/>
+      <path d="M306.6 175.9 A100 100 0 0 1 286.6 214.3" fill="none" style="stroke:var(--accent)" stroke-width="2.5" marker-end="url(#arr)"/>
+      <path d="M133.4 214.3 A100 100 0 0 1 113.4 175.9" fill="none" style="stroke:var(--accent)" stroke-width="2.5" marker-end="url(#arr)"/>
+      <path d="M113.4 124.1 A100 100 0 0 1 133.4 85.7" fill="none" style="stroke:var(--accent)" stroke-width="2.5" marker-end="url(#arr)"/>
+      <rect x="135" y="28" width="150" height="44" rx="10" style="fill:var(--tint)"/><text class="t" x="210" y="55" text-anchor="middle">1. Có tiền</text>
+      <rect x="235" y="128" width="150" height="44" rx="10" style="fill:var(--tint)"/><text class="t" x="310" y="155" text-anchor="middle">2. Mua một lô hàng</text>
+      <rect x="135" y="228" width="150" height="44" rx="10" style="fill:var(--tint)"/><text class="t" x="210" y="255" text-anchor="middle">3. Chụp ảnh, bán hết</text>
+      <rect x="35" y="128" width="150" height="44" rx="10" style="fill:var(--accent-soft)"/><text class="tb" x="110" y="155" text-anchor="middle">4. Tiền về, nhiều hơn</text>
+    </svg>
+    <p class="why">Tiền nằm trong hàng chưa bán là tiền "ngủ", không dùng được việc gì khác. Mua ít, bán hết, rồi mới mua tiếp thì tiền luôn quay vòng và mình không bao giờ ôm một đống hàng ế.</p>
+  </div>
+  <div class="fig">
+    <div class="ft">Thử nhỏ trước khi mua nhiều</div>
+    <div class="funnel">
+      <div style="width:100%"><b>Lô mẫu · 800.000đ</b><br>20 mẫu nơ, mỗi mẫu 2–3 cái</div>
+      <div style="width:78%">Kiểm chất lượng, chụp thử</div>
+      <div style="width:56%"><b>Giữ 6–8 mẫu</b> chắc, đẹp, lên ảnh đẹp</div>
+      <div style="width:56%;background:var(--accent);color:var(--bg)"><b>Lô 1 · 2.000.000đ</b><br>khoảng 200–260 cái</div>
+    </div>
+    <p class="why">Ảnh trên mạng có thể khác hàng thật. Mua mỗi mẫu vài cái để cầm, kiểm, chụp thử. Mất ít tiền để tránh mất nhiều tiền vì nhập nhầm cả trăm cái mẫu xấu.</p>
+  </div>
+  <p>Mình mua qua trang 1688 của Trung Quốc vì ở đó <strong>chọn được đúng mẫu mình thích</strong>. Mua trong nước có khi còn rẻ hơn, nhưng thường là túi kẹp trộn lẫn nhiều kiểu, không làm được một bộ sưu tập đẹp.</p>
+</section>
+
+<section id="p12">
+  <h2><span class="n">Phần 12</span>Chia 10 triệu thế nào?</h2>
+  <div class="term"><span class="k">Từ khoá</span><b>Vốn · Dự phòng</b><span>Vốn là tiền bỏ ra để làm. Dự phòng là tiền để riêng cho chuyện không may.</span></div>
+  <div class="fig">
+    <div class="budget" role="list">
+      <div class="b" role="listitem"><span>Quảng cáo Facebook</span><div class="track"><div class="fill" style="width:25%"></div></div><span class="v">2.500.000</span></div>
+      <div class="b" role="listitem"><span>Lô 1, hàng để bán</span><div class="track"><div class="fill" style="width:20%"></div></div><span class="v">2.000.000</span></div>
+      <div class="b" role="listitem"><span>Dự phòng</span><div class="track"><div class="fill keep" style="width:14%"></div></div><span class="v">1.400.000</span></div>
+      <div class="b" role="listitem"><span>Đồ chụp ảnh</span><div class="track"><div class="fill" style="width:12%"></div></div><span class="v">1.200.000</span></div>
+      <div class="b" role="listitem"><span>Để dành cho lô 2</span><div class="track"><div class="fill keep" style="width:10%"></div></div><span class="v">1.000.000</span></div>
+      <div class="b" role="listitem"><span>Lô mẫu</span><div class="track"><div class="fill" style="width:8%"></div></div><span class="v">800.000</span></div>
+      <div class="b" role="listitem"><span>Hộp, túi, thiệp</span><div class="track"><div class="fill" style="width:8%"></div></div><span class="v">800.000</span></div>
+      <div class="b" role="listitem"><span>Tên web, việc lặt vặt</span><div class="track"><div class="fill" style="width:3%"></div></div><span class="v">300.000</span></div>
+      <div class="b" role="listitem" style="border-top:1px solid var(--line);padding-top:8px"><strong>Tổng</strong><span></span><span class="v">10.000.000</span></div>
+    </div>
+    <p class="why">Khoản lớn nhất là quảng cáo, không phải hàng, vì bán trên web thì tìm khách tốn hơn mua hàng. Thanh xám là tiền chưa tiêu: nếu lần thử không thành, số tiền này vẫn còn.</p>
+  </div>
+</section>
+
+<section id="p13">
+  <h2><span class="n">Phần 13</span>Những con số mình đang đoán</h2>
+  <div class="term"><span class="k">Từ khoá</span><b>Giả định</b><span>Một con số mình tạm tin là đúng để lập kế hoạch, nhưng chưa kiểm tra.</span></div>
+  <div class="guess">
+    <div class="g"><b>Giá vốn một cái kẹp: 8.000đ</b><span class="pill">đang đoán</span><span>Biết thật khi lô mẫu về tới nhà.</span></div>
+    <div class="g"><b>Tiền ship một đơn: 25.000đ</b><span class="pill">đang đoán</span><span>Biết thật khi hỏi giá hãng giao hàng.</span></div>
+    <div class="g"><b>Tiền quảng cáo cho một đơn: 50.000đ</b><span class="pill">đang đoán</span><span>Biết thật sau 3 tuần chạy thử. Con số quan trọng nhất.</span></div>
+  </div>
+  <p style="margin-top:14px">Kế hoạch nào cũng có đoán. Điều quan trọng là <strong>biết chỗ nào mình đang đoán</strong>, và thay bằng số thật ngay khi có.</p>
+</section>
+
+<section id="p14">
+  <h2><span class="n">Phần 14</span>Làm sao biết lần thử thành công?</h2>
+  <div class="decide">
+    <div class="q"><strong>Sau 6 tuần bán lô 1, hỏi 3 câu:</strong>
+      <ol>
+        <li>Đã bán được ít nhất 70% số hàng chưa?</li>
+        <li>Tiền quảng cáo cho một đơn có nhỏ hơn phần "còn lại" của set không?</li>
+        <li>Có ít hơn 8 trên 100 đơn phải đổi hàng không?</li>
+      </ol>
+    </div>
+    <div class="out">
+      <div class="o yes"><b>Cả 3 đều "có"</b>Nhập lô 2 bằng tiền đã để dành, làm tiếp.</div>
+      <div class="o no"><b>Có câu "không"</b>Dừng lại. Bán nốt hàng bằng giá vốn. Ghi lại mình học được gì.</div>
+    </div>
+  </div>
+  <div class="stop"><strong>Luật dừng sớm:</strong> nếu đã tiêu hết 2.500.000đ quảng cáo mà vẫn chưa có đơn đều đặn mỗi tuần, dừng luôn, không chờ đủ 6 tuần.</div>
+  <p style="margin-top:14px" class="cap">Có luật dừng từ trước giúp mình không tiếc tiền mà cố thêm mãi.</p>
+</section>
+
+<section id="p15">
+  <h2><span class="n">Phần 15</span>Nếu có chuyện thì làm gì?</h2>
+  <div class="risks">
+    <div class="risk"><div class="if">không ai vào web</div><div class="then">thử ảnh bìa khác trên quảng cáo. Vẫn không được thì áp luật dừng.</div></div>
+    <div class="risk"><div class="if">quảng cáo quá đắt</div><div class="then">thôi quảng cáo set 2, chỉ quảng cáo set 3 và set 5.</div></div>
+    <div class="risk"><div class="if">khách mua nhầm cỡ, nhầm màu</div><div class="then">kiểm lại ảnh thước đo và màu ảnh, ghi số đo ngay trên ảnh bìa.</div></div>
+    <div class="risk"><div class="if">hàng về bị lỗi</div><div class="then">quay video lúc mở thùng, báo shop trong 2–3 ngày để được đền.</div></div>
+    <div class="risk"><div class="if">giá vốn thật cao hơn 15.000đ một cái</div><div class="then">bỏ mẫu đó, vì không còn đủ lãi.</div></div>
+    <div class="risk"><div class="if">hàng bị giữ lại vì thiếu giấy tờ</div><div class="then">hỏi đơn vị đặt hộ về hoá đơn từ trước, và biết sẵn một chỗ mua trong nước có hoá đơn.</div></div>
+  </div>
+</section>
+
+<section id="p16">
+  <h2><span class="n">Phần 16</span>Các bước bắt đầu</h2>
+  <p class="cap">Đánh dấu được lưu trên trình duyệt của bạn.</p>
+  <ol class="tasks" id="tasks">
+    <li><span class="idx">1</span><input type="checkbox" id="t1"><label for="t1" class="txt"><strong>Gọi đơn vị đặt hộ Phong Đà</strong> (<span class="phone">0844.713.555</span>) hỏi 5 điều: tỷ giá tiền Trung Quốc, cước chở về Đà Nẵng, có tính cước theo độ to không, phải đặt cọc bao nhiêu, phí kiểm hàng. Xin họ trả lời bằng tin nhắn.</label></li>
+    <li><span class="idx">2</span><input type="checkbox" id="t2"><label for="t2" class="txt">Chọn 25–30 mẫu nơ trên 1688, ưu tiên mẫu chụp riêng vẫn đẹp.</label></li>
+    <li><span class="idx">3</span><input type="checkbox" id="t3"><label for="t3" class="txt">Đặt lô mẫu khoảng 800.000đ.</label></li>
+    <li><span class="idx">4</span><input type="checkbox" id="t4"><label for="t4" class="txt">Đặt tên thương hiệu, kiểm tra tên web và tên trang Facebook còn trống.</label></li>
+    <li><span class="idx">5</span><input type="checkbox" id="t5"><label for="t5" class="txt">Chọn màu nền và kiểu chụp. Mua đồ chụp, chụp thử khi lô mẫu về.</label></li>
+    <li><span class="idx">6</span><input type="checkbox" id="t6"><label for="t6" class="txt">Làm website: trang sản phẩm, thanh toán tự xác nhận, trang tra đơn, câu hỏi thường gặp, form đổi hàng.</label></li>
+    <li><span class="idx">7</span><input type="checkbox" id="t7"><label for="t7" class="txt">Tìm xem người ta gõ gì trên Google khi tìm kẹp nơ.</label></li>
+    <li><span class="idx">8</span><input type="checkbox" id="t8"><label for="t8" class="txt">Làm trang Facebook, tắt tin nhắn.</label></li>
+    <li><span class="idx">9</span><input type="checkbox" id="t9"><label for="t9" class="txt">Nhập lô 1, chạy quảng cáo thử 3 tuần, ghi lại số liệu mỗi Chủ nhật.</label></li>
+  </ol>
+  <footer>Chi tiết cho người lớn (nguồn hàng, đơn vị đặt hộ, thuế) nằm trong thư mục <code>docs/</code>.</footer>
+</section>
+</main>
+</div>
+
+<script>
+(function(){
+  var KEY='kepno-steps', state={};
+  try{ state=JSON.parse(localStorage.getItem(KEY)||'{}')||{}; }catch(e){ state={}; }
+  document.querySelectorAll('#tasks input[type=checkbox]').forEach(function(cb){
+    var li=cb.closest('li');
+    if(state[cb.id]){ cb.checked=true; li.classList.add('checked'); }
+    cb.addEventListener('change',function(){
+      li.classList.toggle('checked',cb.checked);
+      state[cb.id]=cb.checked;
+      try{ localStorage.setItem(KEY,JSON.stringify(state)); }catch(e){}
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
